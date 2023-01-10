@@ -59,7 +59,7 @@
                         <span class="menu-toggle"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav main-menu m-auto">
+                        <ul class="navbar-nav main-menu m-auto " style="font-family: cursive">
                             <li><a href="{{route('home')}}">{{__('Home')}}</a></li>
                             @foreach($pages as $k => $data)
                                 <li><a href="{{route('pages',[$data->slug])}}">{{__($data->name)}}</a></li>

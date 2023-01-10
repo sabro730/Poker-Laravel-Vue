@@ -444,6 +444,10 @@ Route::name('user.')->prefix('user')->group(function () {
             // Transaction
             Route::get('transactions', 'UserController@transactions')->name('transactions');
             Route::get('referral', 'UserController@referrals')->name('referrals');
+
+            // Lobby
+            Route::get('lobby1', 'UserController@lobby1')->name('lobby1');
+            Route::get('lobby2', 'UserController@lobby2')->name('lobby2');
         });
     });
 });

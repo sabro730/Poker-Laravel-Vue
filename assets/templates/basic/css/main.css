@@ -78,6 +78,7 @@ a:hover {
 }
 
 /* reset css end */
+
 /* global css strat */
 .mt-15 {
     margin-top: 15px;
@@ -1465,6 +1466,9 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+
+
 /* button css start */
 .cmn-btn {
     padding: 14px 35px;
@@ -1474,7 +1478,7 @@ a:hover {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background-color: #ed1569;
+    background-color: #ffffff !important;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
@@ -1489,6 +1493,21 @@ a:hover {
 
 .cmn-btn.btn-sm {
     padding: 10px 20px;
+}
+
+.signup-btn {
+    padding: 14px 35px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #ed1569;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #363636;
 }
 
 .cmn-btn-two {
@@ -2421,6 +2440,8 @@ a:hover {
     }
 }
 
+
+
 .navbar-toggler {
     padding: 0;
     border: none;
@@ -2844,7 +2865,7 @@ span.is-active:after {
 }
 
 .game-card::before {
-    position: absolute;
+    /* position: absolute; */
     content: '';
     top: 0;
     left: 0;

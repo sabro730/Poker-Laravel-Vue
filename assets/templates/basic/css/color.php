@@ -32,11 +32,11 @@ background-color: <?php echo $color ?>;
 }
 
 .cmn-btn, .table.style--two thead {
-background-color: <?php echo $color ?>;
+<!-- background-color: <?php echo $color ?>; -->
 }
 .cmn-btn:hover {
-background-color: <?php echo $color ?>;
-box-shadow: 0 0 10px 2px <?php echo $color ?>8c;
+<!-- background-color: <?php echo $color ?>; -->
+<!-- box-shadow: 0 0 10px 2px <?php echo $color ?>8c; -->
 }
 .cmn-btn-two {
     border: 1px solid <?php echo $color ?>;

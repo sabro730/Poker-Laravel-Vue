@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Providers;
-
 use App\Models\AdminNotification;
 use App\Models\Deposit;
 use App\Models\Frontend;
@@ -14,7 +12,6 @@ use App\Models\Withdrawal;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,9 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['request']->server->set('HTTPS', true);
+        // $this->app['request']->server->set('HTTPS', true);
     }
-
     /**
      * Bootstrap any application services.
      *
@@ -34,7 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
 
         $activeTemplate = activeTemplate();
         $general = GeneralSetting::first();
@@ -44,7 +39,6 @@ class AppServiceProvider extends ServiceProvider
         $viewShare['language'] = Language::all();
         $viewShare['pages'] = Page::where('tempname',$activeTemplate)->where('slug','!=','home')->get();
         view()->share($viewShare);
-
 
         view()->composer('admin.partials.sidenav', function ($view) {
             $view->with([
@@ -56,26 +50,21 @@ class AppServiceProvider extends ServiceProvider
                 'pending_withdraw_count'    => Withdrawal::pending()->count(),
             ]);
         });
-
         view()->composer('admin.partials.topnav', function ($view) {
             $view->with([
                 'adminNotifications'=>AdminNotification::where('read_status',0)->with('user')->orderBy('id','desc')->get(),
             ]);
         });
-
         view()->composer('partials.seo', function ($view) {
             $seo = Frontend::where('data_keys', 'seo.data')->first();
             $view->with([
                 'seo' => $seo ? $seo->data_values : $seo,
             ]);
         });
-
         if($general->force_ssl){
             \URL::forceScheme('https');
         }
 
-
         Paginator::useBootstrap();
-
     }
 }

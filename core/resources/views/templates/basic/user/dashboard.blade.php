@@ -40,15 +40,17 @@
         <div class="row justify-content-center">
             @forelse($games as $game)
             <div class="col-xl-3 col-lg-4 col-sm-6 mb-30 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s">
-                <div class="game-card style--two">
-                    <div class="game-card__thumb">
-                        <img src="{{ getImage(imagePath()['game']['path'].'/'.$game->image,imagePath()['game']['size']) }}" alt="image">
+                <a href="{{ route('user.lobby1') }}">
+                    <div class="game-card style--two">
+                        <div class="game-card__thumb">
+                            <img src="{{ getImage(imagePath()['game']['path'].'/'.$game->image,imagePath()['game']['size']) }}" alt="image">
+                        </div>
+                        <div class="game-card__content">
+                            <!-- <h4 class="game-name" data-css='margin-top:100px,padding-bottom:100px'>{{ __($game->name) }}</h4> -->
+                            <a href="{{ route('user.play.'.$game->alias) }}" class="cmn-btn d-block text-center btn-sm mt-3 btn--capsule">@lang('Play Now')</a>
+                        </div>
                     </div>
-                    <div class="game-card__content">
-                        <h4 class="game-name" data-css='margin-top:100px,padding-bottom:100px'>{{ __($game->name) }}</h4>
-                        <a href="{{ route('user.play.'.$game->alias) }}" class="cmn-btn d-block text-center btn-sm mt-3 btn--capsule">@lang('Play Now')</a>
-                    </div>
-                </div>
+                </a>
             </div>
             @empty
             <div class="col-md-12">

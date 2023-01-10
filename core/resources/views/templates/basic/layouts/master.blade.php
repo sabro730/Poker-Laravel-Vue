@@ -105,6 +105,13 @@
                                         <li><a href="{{ route('user.logout') }}">@lang('Logout')</a></li>
                                     </ul>
                                 </li>
+                                <li class="menu_has_children">
+                                    <a href="#">@lang('Poker')</a>
+                                    <!-- <ul class="sub-menu">
+                                        <li><a href="{{ route('ticket.open') }}">@lang('Create New')</a></li>
+                                        <li><a href="{{ route('ticket') }}">@lang('My Ticket')</a></li>
+                                    </ul> -->
+                                </li>
                             </ul>
                         @endauth
 

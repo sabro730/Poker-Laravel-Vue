@@ -423,4 +423,15 @@ class UserController extends Controller
         $refs = \auth()->user()->referrals()->latest()->paginate(getPaginate());
         return view($this->activeTemplate . 'user.referrals', compact('pageTitle', 'refs', 'empty_message'));
     }
+
+    public function lobby1()
+    {
+        return view('templates.basic.user.lobby1');
+    }
+
+    public function lobby2()
+    {
+        return view('templates.basic.user.lobby2');
+
+    }
 }
